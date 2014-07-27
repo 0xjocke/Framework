@@ -44,12 +44,20 @@ function checkMenuState(menuItem){
         for(var i = 1; i < menuItem.getElementsByTagName("ul").length; i++){
             if(!menuItem.getElementsByTagName("div")[i]){
                 var subWrap = document.createElement("div");
-                var li = menuItem.getElementsByTagName("ul")[i].getElementsByTagName("li");
+                if(menuItem.getElementsByTagName("ul")[i].getElementsByTagName("a").length > 1){
+                    var li = menuItem.getElementsByTagName("ul")[i].getElementsByTagName("a");
+                    var n = 1;
+                }
+                else{
+                    var li = menuItem.getElementsByTagName("ul")[i].getElementsByTagName("li");
+                    var n = 0;
+                }
+                
             
                 menuItem.getElementsByTagName("ul")[i].appendChild(subWrap,menuItem.getElementsByTagName("ul")[i]);
 
                 for(var u = 0; u < li.length; u++){
-                    $(li[0]).appendTo(subWrap);
+                    $(li[n]).appendTo(subWrap);
                 }
             }
         }
