@@ -3,13 +3,12 @@
 <head>
 	<title>ALBATROS CSS FRAMEWORK</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-	<link rel="stylesheet" type="text/css" href="css/albatros.css">
+	<link rel="stylesheet/less" type="text/css" href="css/albatros.less" />
 	<script src="js/Jquery-min.js" ></script>
-	
+	<script src="js/less-min.js" ></script>
 	
 </head>
 <body>
-
 
 <nav class="menubar fixed">
 	<div class="container">
@@ -28,6 +27,7 @@
 		
 	</div>
 </nav>
+<div style="height:300px; background-color:blue;"></div>
 
 <div class="container">
 
@@ -56,6 +56,11 @@
 	<span style=color:red>&lt;/li&gt;</span>
 </pre><br><br><br>
 
+
+
+<div class="head">HEAD</div>
+<div class="page">PAGE</div>
+<br><br>
 
 	<div class="success">This is a successfull message!</div>
 	<div class="error">This is an error message!</div>
@@ -167,13 +172,26 @@
 	<div class="bl10">1/10</div>
 	<div class="bl10">1/10</div>
 
+
 <h3>How to use blocks</h3>
 <pre class="codeblock">
 	<span style=color:red>&lt;div class="bl1"&gt;</span>1/1<span style=color:red>&lt;/div&gt;</span>
 	<span style=color:red>&lt;div class="bl2"&gt;</span>1/2<span style=color:red>&lt;/div&gt;</span>
 	<span style=color:red>&lt;div class="bl3"&gt;</span>1/3<span style=color:red>&lt;/div&gt;</span>
 	etc.. up to bl10.
-</pre><br><br><br>
+</pre>
+<br>
+<br>
+<br>
+
+<h3>blockquotes</h3>
+<blockquote cite="AlbatrosCss">
+A quote from AlbatrosCss.
+</blockquote>	
+
+<pre class="codeblock">
+<span style=color:red>&lt;blockquote cite="YourSource"&gt;</span>A quote from AlbatrosCss.<span style=color:red>&lt;/blockquote&gt;</span>
+</pre>
 
 		<br>
 		
