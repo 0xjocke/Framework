@@ -5,39 +5,8 @@
 */
 
 
-
-
-
-/*CONFIG------------------------------------*/
-
-	/*COLORS--------------------------------------*/
-	@backgroundColor: #fff;
-	@baseColor: #1a4b94;
-	@grayColor: #808080;
-
-	@baseFontColor: #2a2a2a;
-	@menuFontColor: #fff;
-	@listMenuFontColor: #000;
-	@linkFontColor: #1a4b94;
-
-	/*FONT--------------------------------------*/
-	.font{
-		font-family: 'Source Sans Pro', sans-serif;
-	}
-	@baseFontSize: 14px;
-	@buttonFontSize: 14px;
-	@menuFontSize: 18px;
-
-	/*PATH--------------------------------------*/
-	@imgPath: "img/";
-
-	/*FONT--------------------------------------*/
-
-
-/*/CONFIG------------------------------------*/
-
-
-
+//Import configFile
+@import "albatrosConfig.less";
 
 
 
@@ -647,11 +616,10 @@ button:hover{
 }
 
 .btn_hlight{
-	@buttonCol:#1a4b94;
 
-	background-color: @buttonCol;
-	border-color: darken(@buttonCol, 20%);
-	color:lighten(@buttonCol, 70%);
+	background-color: @buttonHighlightCol;
+	border-color: darken(@buttonHighlightCol, 20%);
+	color:lighten(@buttonHighlightCol, 70%);
 }
 
 .btn_hlight:hover{
@@ -822,3 +790,10 @@ img.rounded{
 
 
 /*/IMAGES----------------------------------*/
+
+
+
+
+
+//Import ElementOverridesConfig
+@import "albatrosElements.less";
