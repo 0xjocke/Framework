@@ -58,8 +58,31 @@
 
 
 
+<div class="headRounded">HEAD</div>
+<div class="pageRounded">PAGE</div>
+<br>
 <div class="head">HEAD</div>
 <div class="page">PAGE</div>
+<br>
+<br>
+
+
+
+<table>
+	<caption>Caption</caption>
+		<tr>
+			<th>Item01</th>
+			<th>Item02</th>
+		</tr>
+		<tr>
+			<td>data</td>
+			<td>data</td>
+		</tr>
+		<tr>
+			<td>data</td>
+			<td>data</td>
+		</tr>
+</table>
 <br><br>
 
 	<div class="success">This is a successfull message!</div>
@@ -275,8 +298,14 @@ A quote from AlbatrosCss.
 		<label for="check">checkbox</label>
 		<input type="checkbox" id="check" value="1">
 
+		<label for="txt">FormLabel</label>
+		<input type="range" name="points" min="1" max="100">
+
 	</form>
 
+
+<div class="ajaxLoaderLight"></div>
+<div class="ajaxLoaderDark"></div>
 <br>
 <h3>Horizontal forms</h3>
 

@@ -160,25 +160,33 @@ article{
 }
 
 .head{
-	.round(4px 4px 0px 0px);
 	background-color: @baseColor;
-	color:#fff;
+	color:@backgroundColor;
 }
-
 
 .page{
 	border:1px solid @baseColor;
-	.round(0px 0px 4px 4px);
 }
 
- .head, .page{
- 	padding:10px;
- }
+.headRounded{
+	.round(2px 2px 0px 0px);
+	background-color: @baseColor;
+	color:@backgroundColor;
+}
 
- .page .slideImg{
- 	width:100%;
- 	height:auto;
- }
+.pageRounded{
+	border:1px solid @baseColor;
+	.round(0px 0px 2px 2px);
+}
+
+.head, .page, .headRounded, .pageRounded{
+	padding:10px;
+}
+
+.page .slideImg{
+	width:100%;
+	height:auto;
+}
 
 .container{
 	padding:5px;
@@ -207,6 +215,36 @@ blockquote p {
 
 /*/BLOCKS----------------------------------*/
 
+
+
+/*TABLE----------------------------------*/
+
+
+
+th{
+	font-size: @baseFontSize;
+	font-weight: 700;
+}
+
+td, th{
+	border-bottom:1px solid lighten(@grayColor, 30%);
+	padding:5px 4px;
+}
+
+tr:hover{
+	background-color: lighten(@grayColor, 45%);
+}
+
+table{
+	width:100%;
+}
+
+table caption{
+	font-size: @baseFontSize+2;
+	font-weight: 700;
+}
+
+/*/TABLE----------------------------------*/
 
 
 .codeblock{
@@ -452,7 +490,7 @@ position:fixed;
 }
 
 .listMenuRounded li{
-	.round(4px);
+	.round(2px);
 }
 
 .listMenu li:hover, .listMenuRounded li:hover{
@@ -565,7 +603,7 @@ background: url('@{imgPath}/notification.svg') no-repeat top left;
 
 
 button, .btn_hlight, .btn_red, .btn_green{
-	.round(3px);
+	.round(2px);
 	.boxing;
 	.font;
 	font-size: @buttonFontSize;
@@ -694,7 +732,82 @@ hr.dotted{
 	display:block;
 }
 
+.superRounded{
+.round(10px);
+}
+
 /*/OTHER----------------------------------*/
+
+
+/*AJAXLOADER----------------------------------*/
+
+.ajaxLoaderLight, .ajaxLoaderDark{
+	.boxing;
+	width:40px;
+	height:40px;
+	border: 4px dotted #000;
+
+	border-radius: 50%;
+
+	-webkit-animation: spin 1s linear infinite;
+	-moz-animation: spin 1s linear infinite;
+	-ms-animation: spin 1s linear infinite;
+	-o-animation: spin 1s linear infinite;
+	animation: spin 1s linear infinite;
+}
+
+.ajaxLoaderLight{
+	border-left-color: rgba(255,255,255,0);
+	border-top-color: rgba(255,255,255,0.1);
+	border-right-color: rgba(255,255,255,0.3);
+	border-bottom-color: rgba(255,255,255,0.5);
+}
+
+.ajaxLoaderDark{
+	border-left-color: rgba(0,0,0,0);
+	border-top-color: rgba(0,0,0,0.1);
+	border-right-color: rgba(0,0,0,0.3);
+	border-bottom-color: rgba(0,0,0,0.5);
+}
+
+
+@-webkit-keyframes spin
+{
+	from { -webkit-transform: rotate(0deg);}
+	50%  { -webkit-transform: rotate(180deg);}
+	to   { -webkit-transform: rotate(360deg);}
+}
+
+@-moz-keyframes spin
+{
+	from { -moz-transform: rotate(0deg);}
+	50%  { -moz-transform: rotate(180deg);}
+	to   { -moz-transform: rotate(360deg);}
+}
+
+@-ms-keyframes spin
+{
+	from { -ms-transform: rotate(0deg);}
+	50%  { -ms-transform: rotate(180deg);}
+	to   { -ms-transform: rotate(360deg);}
+}
+
+@-o-keyframes spin
+{
+	from { -o-transform: rotate(0deg);}
+	50%  { -o-transform: rotate(180deg);}
+	to   { -o-transform: rotate(360deg);}
+}
+
+@keyframes spin
+{
+	from { transform: rotate(0deg);}
+	50%  { transform: rotate(180deg);}
+	to   { transform: rotate(360deg);}
+}
+
+/*/AJAXLOADER----------------------------------*/
+
 
 
 /*LINKS----------------------------------*/
@@ -720,7 +833,21 @@ label{
 	padding:5px 0px;
 }
 
-input[type="text"], input[type="password"], textarea, select{
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="month"],
+input[type="datetime-local"],
+input[type="datetime"],
+input[type="date"],
+input[type="datetime"],
+input[type="password"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea,
+select{
 	.boxing;
 	.font;
 	.shadow(inset 1px 2px 3px rgba(0,0,0,0.06));
@@ -740,9 +867,25 @@ input[type="checkbox"],input[type="radio"]{
 	height:20px;
 }
 
+input[type="range"]{
+	
+}
 
-
-input[type="text"]:focus, input[type="password"]:focus, textarea:focus, select:focus{
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus,
+input[type="month"]:focus,
+input[type="datetime-local"]:focus,
+input[type="datetime"]:focus,
+input[type="date"]:focus,
+input[type="datetime"]:focus,
+input[type="password"]:focus,
+input[type="tel"]:focus,
+input[type="time"]:focus,
+input[type="url"]:focus,
+input[type="week"]:focus,
+textarea:focus,
+select:focus{
 	.shadow(inset 1px 2px 3px rgba(0,0,0,0.06), 0px 0px 5px rgba(0,0,0,0.2));
 }
 
@@ -753,10 +896,6 @@ input:disabled, textarea:disabled, select:disabled{
 /*PHONES AND REALLY SMALL SCREENS*/
 @media (max-width: 700px) 
 {
-
-	input[type="text"], input[type="password"], textarea{
-		width:100%;
-	}
 
 }
 
