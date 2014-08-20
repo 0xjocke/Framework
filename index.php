@@ -66,7 +66,28 @@
 <br>
 <br>
 
+Dotted List
+<ul class="listDot">
+	<li>Item01</li>
+	<li>Item02</li>
+	<ul>
+		<li>moreItem01</li>
+		<li>moreItem02</li>
+	</ul>
+</ul>
+<br>
+Numeric List
+<ul class="listNum">
+	<li>Item01</li>
+	<li>Item02</li>
+	<ul>
+		<li>moreItem01</li>
+		<li>moreItem02</li>
+	</ul>
+</ul>
 
+<br>
+<br>
 
 <table>
 	<caption>Caption</caption>
@@ -89,6 +110,19 @@
 	<div class="error">This is an error message!</div>
 	<div class="warning">This is a warning message!</div>
 	<div class="notification">This is a notification message!</div>
+
+<br><br>
+
+<div class="shadowGlow">Shadow</div>
+<br>
+<div class="shadowBottom">Shadow</div>
+<br>
+<div class="shadowTop">Shadow</div>
+<br>
+<div class="shadowLeft">Shadow</div>
+<br>
+<div class="shadowRight">Shadow</div>
+<br><br>
 
 <h3>How to use messages</h3>
 <pre class="codeblock">
@@ -130,6 +164,7 @@
 	<h3>H3 headline</h3>
 	<h4>H4 headline</h4>
 	<h5>H5 headline</h5>
+	<h6>H6 headline</h6>
 		
 	<div class="bl1">1/1</div>
 	<div class="bl2">1/2</div>
@@ -255,10 +290,24 @@ A quote from AlbatrosCss.
 </pre><br><br><br>
 
 
-	<article>
-		<h3>Article</h3>
-		<b>An article have justify alignment on text</b><br>
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse  <a href="">congue</a> aliquet orci. Fusce in tristique tortor, a volutpat erat. In bibendum, quam in dignissim viverra, sem elit feugiat mi, vitae <a href="">aliquet</a> nunc elit ac urna. Pellentesque in magna pulvinar, consequat nulla non, rutrum nisl. Proin blandit massa nec dictum molestie. Cras lacinia, enim eu sollicitudin pretium, mauris est <a href="">malesuada</a> nibh, ut ultricies neque libero vel erat. Praesent hendrerit, nisi vulputate placerat imperdiet, lacus eros fringilla dui, ac aliquet nisi risus non neque. Aenean euismod sit amet turpis elementum semper.
+	<article class="textLeft">
+		<h3>Article Left</h3>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse  <a href="">congue</a> aliquet orci. Fusce tortor, a volutpat erat.<a href="">Aliquet</a> nunc elit ac urna. Pellentesque in magna pulvinar, consequat nulla non, rutrum nisl. Proin blandit massa nec dictum molestie. Cras lacinia, enim eu sollicitudin pretium, mauris est <a href="">malesuada</a> nibh, ut ultricies neque libero vel erat.
+	</article>
+
+	<article class="textRight">
+		<h3>Article Right</h3>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse  <a href="">congue</a> aliquet orci. Fusce tortor, a volutpat erat.<a href="">Aliquet</a> nunc elit ac urna. Pellentesque in magna pulvinar, consequat nulla non, rutrum nisl. Proin blandit massa nec dictum molestie. Cras lacinia, enim eu sollicitudin pretium, mauris est <a href="">malesuada</a> nibh, ut ultricies neque libero vel erat.
+	</article>
+
+	<article class="textCenter">
+		<h3>Article Center</h3>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse  <a href="">congue</a> aliquet orci. Fusce tortor, a volutpat erat.<a href="">Aliquet</a> nunc elit ac urna. Pellentesque in magna pulvinar, consequat nulla non, rutrum nisl. Proin blandit massa nec dictum molestie. Cras lacinia, enim eu sollicitudin pretium, mauris est <a href="">malesuada</a> nibh, ut ultricies neque libero vel erat.
+	</article>
+
+	<article class="textJustify">
+		<h3>Article Justify</h3>
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse  <a href="">congue</a> aliquet orci. Fusce tortor, a volutpat erat.<a href="">Aliquet</a> nunc elit ac urna. Pellentesque in magna pulvinar, consequat nulla non, rutrum nisl. Proin blandit massa nec dictum molestie. Cras lacinia, enim eu sollicitudin pretium, mauris est <a href="">malesuada</a> nibh, ut ultricies neque libero vel erat.
 	</article>
 
 	<span class="infoTxt">
@@ -283,7 +332,7 @@ A quote from AlbatrosCss.
 	<h3>Forms</h3>
 	<form>
 		<label for="txt">FormLabel</label>
-		<input type="text" id="txt">
+		<input type="text" id="txt" class="large">
 		<label for="txtA">FormLabel</label>
 		<textarea id="txtA"></textarea>
 
@@ -334,6 +383,10 @@ Put elements inside blocks with your required sizing (20% and 80%).
 		<span style=color:red>&lt;span class="bl80"&gt;</span><span style=color:red>&lt;input type="text" id="txt"&gt;</span><span style=color:red>&lt;/span&gt;</span>
 	<span style=color:red>&lt;/form&gt;</span>
 </pre><br><br><br>
+
+
+<section style="background-color:blue;">test</section>
+
 
 </div>
 

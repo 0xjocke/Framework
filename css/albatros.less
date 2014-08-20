@@ -99,10 +99,6 @@ nav li{
 	cursor:pointer;
 }
 
-article{
-	text-align:justify;
-}
-
 /*/RESET----------------------------------*/
 
 /*BLOCKS----------------------------------*/
@@ -159,6 +155,11 @@ article{
 	float:left;
 }
 
+.mid{
+	float:none;
+	margin:auto;
+}
+
 .head{
 	background-color: @baseColor;
 	color:@backgroundColor;
@@ -213,6 +214,26 @@ blockquote p {
   display: inline;
 }
 
+section{
+	padding:@sectionPaddingX @sectionPaddingX;
+}
+
+/*TABLET AND SMALL SCREENS*/
+@media (min-width: 700px) AND (max-width: 850px) 
+{
+	section{
+		padding:@sectionPaddingX/2 @sectionPaddingX/2;
+	}
+}
+
+/*PHONES AND REALLY SMALL SCREENS*/
+@media (max-width: 700px) 
+{
+	section{
+		padding:@sectionPaddingX/4 @sectionPaddingX/4;
+	}
+}
+
 /*/BLOCKS----------------------------------*/
 
 
@@ -246,6 +267,32 @@ table caption{
 
 /*/TABLE----------------------------------*/
 
+/*LIST----------------------------------*/
+
+ul.listDot{
+	list-style-position: inside;
+	list-style-type:circle;
+}
+
+ul.listDot ul{
+	list-style-position: inside;
+	list-style-type:disc;
+	padding-left:15px;
+}
+
+ul.listNum{
+	list-style-position: inside;
+	list-style-type:decimal;
+}
+
+ul.listNum ul{
+	list-style-position: inside;
+	list-style-type:decimal;
+	padding-left:15px;
+}
+
+/*/LIST----------------------------------*/
+
 
 .codeblock{
   font-family: 'Lucida Console', monospace !important;
@@ -270,7 +317,7 @@ table caption{
 	max-height:59px;
 	width:auto;
 	display:block;
-	padding:18px 25px;
+	padding:15px 25px;
 }
 
 .menubar.fixed{
@@ -295,6 +342,7 @@ position:fixed;
 	float:right;
 }
 
+
 .menubar ul ul > a:first-child{
 	.boxing;
 	display:block;
@@ -315,13 +363,18 @@ position:fixed;
 .menubar ul ul:hover > div{
 	display:block;
 	position:absolute;
-	background-color: rgba(0,0,0,0.7);
+	background-color: darken(@baseColor, 5%);
 }
 
 .menubar ul ul li{
-	display: block;
+	display: none;
 	float:none;
 }
+
+.menubar ul ul:hover > div li {
+	display: block;
+}
+
 
 .menubar li{
 	.boxing;
@@ -331,12 +384,11 @@ position:fixed;
 }
 
 .menubar li:hover, .menubar ul ul > a:first-child:hover{
-	background-color: rgba(0,0,0,0.05);
-	color:rgba(255,255,255,0.8);
+	background-color: @secColor;
 }
 
 .menubar li.active{
-	background-color: rgba(0,0,0,0.1);
+	background-color: darken(@secColor, 10%);
 }
 
 .menubar:after{
@@ -518,7 +570,6 @@ position:fixed;
 .leftie{ float:left;}
 .rightie{ float:right;}
 .center{ text-align: center; margin:auto;}
-
 /*PHONES AND REALLY SMALL SCREENS*/
 @media (max-width: 700px) 
 {
@@ -526,6 +577,21 @@ position:fixed;
 	.phoneRightie{ float:right;}
 }
 
+.textJustify{
+	text-align:justify;
+}
+
+.textCenter{
+	text-align:center;
+}
+
+.textRight{
+	text-align:right;
+}
+
+.textLeft{
+	text-align:left;
+}
 
 /*/ALIGNS----------------------------------*/
 
@@ -697,7 +763,6 @@ button:hover{
 /*HEADLINES----------------------------------*/
 
 h1, h2, h3, h4, h5{
-	font-weight: bold;
 	color:@baseFontColor;
 	letter-spacing:1.1px;
 }
@@ -707,6 +772,7 @@ h2{	font-size:@baseFontSize+5+5+5;}
 h3{	font-size:@baseFontSize+5+5;}
 h4{	font-size:@baseFontSize+5;}
 h5{	font-size:@baseFontSize+2;}
+h6{	font-size:@baseFontSize;}
 /*/HEADLINES----------------------------------*/
 
 
@@ -734,6 +800,26 @@ hr.dotted{
 
 .superRounded{
 .round(10px);
+}
+
+.shadowGlow{
+	.shadow(0px 0px 3px rgba(0,0,0,0.5));
+}
+
+.shadowBottom{
+	.shadow(0px 2px 3px rgba(0,0,0,0.5));
+}
+
+.shadowTop{
+	.shadow(0px -2px 3px rgba(0,0,0,0.5));
+}
+
+.shadowLeft{
+	.shadow(-2px 0px 3px rgba(0,0,0,0.5));
+}
+
+.shadowRight{
+	.shadow(2px 0px 3px rgba(0,0,0,0.5));
 }
 
 /*/OTHER----------------------------------*/
@@ -891,6 +977,10 @@ select:focus{
 
 input:disabled, textarea:disabled, select:disabled{
 	background-color: lighten(@grayColor, 40%);
+}
+
+input.large{
+	font-size: @baseFontSize+10;
 }
 
 /*PHONES AND REALLY SMALL SCREENS*/
