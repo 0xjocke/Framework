@@ -1,0 +1,85 @@
+h1, h2, h3, h4, h5, h6{
+	.headlineFont;
+	color:@primaryColor;
+	letter-spacing:1.1px;
+}
+
+h1{	font-size:@fontSize+50;}
+h2{	font-size:@fontSize+25;}
+h3{	font-size:@fontSize+15;}
+h4{	font-size:@fontSize+10;}
+h5{	font-size:@fontSize+5;}
+h6{	font-size:@fontSize+2;}
+
+.textJustify{
+	text-align:justify;
+}
+
+.textCenter{
+	text-align:center;
+}
+
+.textRight{
+	text-align:right;
+}
+
+.textLeft{
+	text-align:left;
+}
+
+.textLarge{
+	font-size: @fontSize+10;
+}
+
+.textSmall{
+	font-size: @fontSize+-5;
+}
+
+.textInfo{
+	font-style: italic;
+	font-size: @fontSize+-2;
+	color:lighten(@grayColor, 10%);
+}
+
+a {
+	text-decoration: none;
+	color:@primaryColor;
+	.transition;
+	&:hover{
+		color:lighten(@primaryColor, 10%);
+	}
+}
+
+a button {
+	text-decoration: none;
+}
+
+
+/*TABLET AND SMALL SCREENS*/
+@media (min-width: 700px) AND (max-width: 850px) 
+{
+	h1{	font-size:@fontSize+50/1.5;}
+	h2{	font-size:@fontSize+25/1.5;}
+	h3{	font-size:@fontSize+15/1.5;}
+	h4{	font-size:@fontSize+10/1.5;}
+	h5{	font-size:@fontSize+5/1.5;}
+	h6{	font-size:@fontSize+2/1.5;}
+	.textLarge{
+		font-size: @fontSize+10/1.5;
+	}
+}
+
+
+/*PHONES AND REALLY SMALL SCREENS*/
+@media (max-width: 700px) 
+{
+	h1{	font-size:@fontSize+50/2;}
+	h2{	font-size:@fontSize+25/2;}
+	h3{	font-size:@fontSize+15/2;}
+	h4{	font-size:@fontSize+10/2;}
+	h5{	font-size:@fontSize+5/2;}
+	h6{	font-size:@fontSize+2/2;}
+	.textLarge{
+		font-size: @fontSize+10/2;
+	}
+}

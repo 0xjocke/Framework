@@ -1,0 +1,47 @@
+.boxing{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.round(@radius){
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-khtml-border-radius: @radius;
+	border-radius: @radius;
+	behavior: url(border-radius.htc);
+}
+
+.shadow(@shadow){
+	-moz-box-shadow: @shadow;
+	-webkit-box-shadow: @shadow;
+	box-shadow: @shadow;
+}
+
+.shadow(@shadow, @shadow2){
+	-moz-box-shadow: @shadow, @shadow2;
+	-webkit-box-shadow: @shadow, @shadow2;
+	box-shadow: @shadow, @shadow2;
+}
+
+.shadowInset(@shadow){
+	-moz-box-shadow: inset @shadow;
+	-webkit-box-shadow: inset @shadow;
+	box-shadow: inset @shadow;
+}
+
+.reset{
+	padding:0px;
+	margin:0px;
+	.boxing;
+}
+
+.transition{
+	-webkit-transition: @transitionSpeed;
+    transition: @transitionSpeed;
+}
+
+.transitionNone{
+	-webkit-transition: 0.0s;
+    transition: 0.0s;
+}

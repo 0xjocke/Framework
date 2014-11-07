@@ -1,0 +1,29 @@
+
+.error{
+	background-color: @errorCol;
+	color: darken(@errorCol, 70%);
+	border:1px solid darken(@errorCol, 10%);
+}
+
+.success{
+	background-color: @successCol;
+	color: darken(@successCol, 70%);
+	border:1px solid darken(@successCol, 10%);
+}
+
+.warning{
+	background-color: @warningCol;
+	color: darken(@warningCol, 70%);
+	border:1px solid darken(@warningCol, 10%);
+}
+
+.notification{
+	background-color: @noteCol;
+	color: darken(@noteCol, 70%);
+	border:1px solid darken(@noteCol, 10%);
+}
+
+.error, .success, .warning, .notification{
+	padding:10px;
+	margin: 2px 0px;
+}

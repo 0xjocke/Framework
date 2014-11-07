@@ -1,0 +1,65 @@
+[class*="bl"] {
+    float: left;
+    min-height:1px;
+    position:relative;
+    .boxing;
+}
+
+.row:after{
+content: ''; 
+clear:both;
+display:block;
+}
+
+
+
+.bl1{width:100%;}
+.bl2{width:50%;}
+.bl3{width:33.333333%;}
+.bl4{width:25%;}
+.bl5{width:20%;}
+.bl6{width:16.666666%;}
+.bl7{width:14.285714%;}
+.bl8{width:12.5%;}
+.bl9{width:11.111111%;}
+.bl10{width:10%;}
+
+.bl20{width:20%;}
+.bl25{width:25%;}
+.bl33{width:33.333333%;}
+.bl66{width:66.666666%;}
+.bl75{width:75%;}
+.bl80{width:80%;}
+
+.container{
+	.boxing;
+	max-width:@containerWidth;
+	margin:auto;
+}
+
+/*TABLET AND SMALL SCREENS*/
+@media (min-width: 700px) AND (max-width: 850px) 
+{
+	.bl1:not(.keep){width:100%;}
+	.bl2:not(.keep){width:50%;}
+	.bl3:not(.keep){width:100%;}
+	.bl4:not(.keep){width:50%;}
+	.bl5:not(.keep){width:100%;}
+	.bl6:not(.keep){width:50%;}
+	.bl7:not(.keep){width:100%;}
+	.bl8:not(.keep){width:50%;}
+	.bl9:not(.keep){width:100%;}
+	.bl10:not(.keep){width:50%;}
+	
+}
+
+/*PHONES AND REALLY SMALL SCREENS*/
+@media (max-width: 700px) 
+{
+	[class*="bl"]:not(.keep) {
+   		width:100%;
+	}
+	.noPhone{
+		display:none;
+	}
+}

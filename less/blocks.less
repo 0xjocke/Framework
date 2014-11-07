@@ -1,0 +1,34 @@
+
+.divDefault{
+	background-color: @backgroundColor;
+	color: contrast(@backgroundColor, @fontColorDark, @fontColorLight, 45%);
+	&.dockBottom{
+		border-top:1px solid darken(@backgroundColor,20%);
+	}
+	&.darken{
+		background-color: darken(@backgroundColor, 5%);
+	}
+}
+
+.divPrimary{
+	background-color: @primaryColor;
+	color: contrast(@primaryColor, @fontColorDark, @fontColorLight, 45%);
+	&.dockBottom{
+		border-top:1px solid darken(@primaryColor,20%);
+	}
+	&.darken{
+		background-color: darken(@primaryColor, 5%);
+	}
+}
+
+.divSecondary{
+	background-color: @secondaryColor;
+	color: contrast(@secondaryColor, @fontColorDark, @fontColorLight, 45%);
+	&.dockBottom{
+		border-top:1px solid darken(@secondaryColor,20%);
+	}
+	&.darken{
+		background-color: darken(@secondaryColor, 5%);
+	}
+}
+

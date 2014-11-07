@@ -1,0 +1,208 @@
+button{
+	cursor: pointer;
+}
+
+
+button, .btn, .btnRed, .btnGreen, .btnBorder, .btnDisabled{
+	.reset;
+	.font;
+	.boxing;
+	font-size: @fontSize+2;
+	//color: @backgroundColor;
+	padding:10px 25px;
+	border:0px;
+	.transition;
+	//.round(@roundness);
+	margin:1px 0px;
+
+	&.small{
+		font-size: @fontSize+-2;
+		padding:8px 20px;		
+	}
+	&.extraSmall{
+		font-size: @fontSize+-4;
+		padding:8px 20px;		
+	}
+
+	&.large{
+	font-size: @fontSize+2;
+	padding:12px 22px;		
+	}
+	&.extraLarge{
+	font-size: @fontSize+6;
+	padding:12px 22px;		
+	}
+
+
+	&:disabled,.btnDisabled{
+		.shadowInset(0px 0px 0px 0px @buttonColor);
+
+		@btnColor: @grayColor;
+		color:lighten(@btnColor, 30%);
+		background-color: lighten(@btnColor,55%);
+		&:hover{
+			background-color: lighten(@btnColor,50%);
+		}
+	}
+
+}
+
+button,.btn{
+	@btnColor: @buttonColor;
+	background-color: @btnColor;
+	color: contrast(@btnColor, @fontColorDark, @fontColorLight, 45%);
+	&:hover{
+		background-color: darken(@btnColor, 5%);
+	}
+}
+
+
+
+.btnRed{
+	@btnColor: @buttonColorRed;
+	background-color: @btnColor;
+	color: contrast(@btnColor, @fontColorDark, @fontColorLight, 45%);
+	&:hover{
+		background-color: darken(@btnColor, 5%);
+	}
+}
+
+
+
+.btnGreen{
+	@btnColor: @buttonColorGreen;
+	background-color: @btnColor;
+	color: contrast(@btnColor, @fontColorDark, @fontColorLight, 45%);
+	&:hover{
+		background-color: darken(@btnColor, 5%);
+	}
+}
+
+
+
+.btnBorder{
+	@btnColor: @buttonColor;
+	padding:9px 25px;
+	//color:@btnColor;
+	color: contrast(@backgroundColor, @fontColorDark, @fontColorLight, 45%);
+	background-color: rgba(255, 255, 255, 0.0);
+	border:1px solid @btnColor;
+
+	&:hover{
+		background-color: rgba(255, 255, 255, 0.5);
+	}
+}
+
+.btnSmall, .btnSmall:disabled{
+	font-size: @fontSize+-2;
+	padding:8px 16px;
+}
+
+.selectorVert ul li, .selectorHor ul li{
+padding:8px;
+background-color: @primaryColor;
+color: contrast(@primaryColor, @fontColorDark, @fontColorLight, 45%);
+.transition;
+	&:hover{
+		background-color: @secondaryColor;
+		color: contrast(@secondaryColor, @fontColorDark, @fontColorLight, 45%);
+	}
+	&.active{
+		background-color: darken(@secondaryColor, 10%);
+		color: contrast(@secondaryColor, @fontColorDark, @fontColorLight, 45%);
+	}
+}
+
+.selectorVert ul li{
+border-bottom:1px solid lighten(@primaryColor, 10%);
+border-top:1px solid darken(@primaryColor, 10%);
+	&.active{
+		border-bottom:1px solid lighten(@secondaryColor, 10%);
+		border-top:1px solid darken(@secondaryColor, 15%);
+		&:hover{
+			border-bottom:1px solid lighten(@secondaryColor, 10%);
+			border-top:1px solid darken(@secondaryColor, 15%);
+		}
+	}
+	&:hover{
+		border-bottom:1px solid lighten(@secondaryColor, 10%);
+		border-top:1px solid darken(@secondaryColor, 10%);
+	}
+}
+
+.selectorVert li:first-child{
+	border-top:0px;
+	border-bottom:1px solid lighten(@primaryColor, 10%);
+	.round(@roundness @roundness 0px 0px);
+	&:hover{
+		border-top:0px;
+		border-bottom:1px solid lighten(@secondaryColor, 10%);
+	}
+}
+
+.selectorVert li:last-child{
+	border-bottom:0px;
+	border-top:1px solid darken(@primaryColor, 10%);
+	.round(0px 0px @roundness @roundness);
+	&:hover{
+		border-bottom:0px;
+		border-top:1px solid darken(@secondaryColor, 10%);
+	}
+}
+
+
+.selectorHor ul li{
+float:left;
+border-right:1px solid lighten(@primaryColor, 10%);
+border-left:1px solid darken(@primaryColor, 10%);
+	&.active{
+		border-right:1px solid lighten(@secondaryColor, 10%);
+		border-left:1px solid darken(@secondaryColor, 15%);
+	}
+	&:hover{
+		border-right:1px solid lighten(@secondaryColor, 10%);
+		border-left:1px solid darken(@secondaryColor, 10%);
+	}
+}
+
+.selectorHor li:first-child{
+	border-left:0px;
+	border-right:1px solid lighten(@primaryColor, 10%);
+	.round(@roundness 0px 0px @roundness);
+	&:hover{
+		border-right:1px solid lighten(@secondaryColor, 10%);
+		border-left:0px;
+	}
+}
+
+.selectorHor li:last-child{
+	border-right:0px;
+	border-left:1px solid darken(@primaryColor, 10%);
+	.round(0px @roundness @roundness 0px);
+	&:hover{
+		border-right:0px;
+		border-left:1px solid darken(@secondaryColor, 10%);
+	}
+}
+
+
+.selectorHor:after, .selectorVert:after{
+	content: '';
+	clear:both;
+}
+
+/*TABLET AND SMALL SCREENS*/
+@media (min-width: 700px) AND (max-width: 850px) 
+{
+
+
+}
+
+
+/*PHONES AND REALLY SMALL SCREENS*/
+@media (max-width: 700px) 
+{
+	button, .btn, .btnRed, .btnGreen, .btnBorder, button:disabled{
+		width: 100%;
+	}
+}

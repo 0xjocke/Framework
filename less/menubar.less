@@ -1,0 +1,222 @@
+
+.menubar{
+	.reset;
+	.boxing;
+	width:100%;
+	z-index:10;
+	font-size: @fontSize;
+	position:relative;
+	background-color: @primaryColor;
+	color: contrast(@primaryColor, @fontColorDark, @fontColorLight, 45%);
+	margin-bottom:3px;
+	.transition;
+}
+
+.menubar img{
+	float:left;
+	max-height:50px;
+	width:auto;
+	display:block;
+	padding:12px 20px;
+	.transition;
+}
+
+.menubar.fixed{
+	position:fixed;
+}
+
+.menubar div.container{
+	max-width:@containerWidth;
+	margin:auto;
+	padding:0px;
+}
+
+.menubar ul{
+	margin-top:0px;
+	float:left;
+	.transition;
+
+}
+
+.menubar ul.right{
+	float:right;
+}
+
+.menubar ul ul > li:first-child{
+	.boxing;
+	display:block;
+	padding:18px 25px;
+}
+
+.menubar ul ul{
+	.boxing;
+	display:block;
+	width:auto;
+}
+
+.menubar ul ul div{
+	display:none;
+}
+
+.menubar ul ul:hover div{
+	display:block;
+	position:absolute;
+	background-color: darken(@primaryColor, 10%);
+}
+
+.menubar ul ul li{
+	display: none;
+	float:none;
+}
+
+.menubar ul ul:hover div li {
+	display: block;
+}
+
+.menubar li{
+	.boxing;
+	display: block;
+	padding:18px 25px;
+	float:left;
+	.transition;
+	cursor: pointer;
+}
+
+.menubar li:hover{
+	background-color: @secondaryColor;
+	color: contrast(@secondaryColor, @fontColorDark, @fontColorLight, 45%);
+}
+
+.menubar li.active{
+	background-color: darken(@secondaryColor, 10%);
+	color: contrast(@secondaryColor, @fontColorDark, @fontColorLight, 45%);
+}
+
+.menubar:after{
+   	content:'';
+    display:block;
+    clear:both;
+}
+
+
+.menubar a{
+	text-decoration: none;
+	color:@backgroundColor;
+}
+
+
+/*TABLET AND SMALL SCREENS*/
+@media (min-width: 700px) AND (max-width: 850px) 
+{
+
+	.menubar img{
+		max-height:32px;
+		padding:5px 10px;
+	}
+
+	.menubar ul ul li:first-child{
+		.boxing;
+		display:block;
+		padding:11px 15px;
+	}
+
+	.menubar{
+		font-size: @fontSize+-2;
+	}
+
+	.menubar li{
+		padding:11px 15px;
+	}
+
+}
+
+
+
+/*PHONES AND REALLY SMALL SCREENS*/
+@media (max-width: 700px) 
+{
+
+	.menubar img{
+		max-height:45px;
+		margin:2px 5px;
+	}
+
+	.menubar{
+		border-bottom:1px solid rgba(0,0,0,0.15);
+		font-size: @fontSize+-2;
+	}
+
+	.menubar.fixed{
+		position:relative;
+	}
+
+	.menubar ul, .menubar ul.right{
+		margin-top:0px;
+		color:@backgroundColor;
+		clear:both;
+		width:100%;
+		z-index:-10;
+		position:relative;
+	}
+
+	.ddlines{
+		float:left;
+		width:20px;
+	    border-bottom: 7px double #fff; 
+	    border-top: 2px solid #fff; 
+	    content:"";
+	    height: 3px;
+	    pointer-events:none;
+	}
+
+	.menubar ul ul div{
+		display:block;
+	}
+
+	.menubar ul ul:hover div{
+		display:block;
+		position:static;
+		background-color: rgba(0,0,0,0.0);
+	}
+	
+	.menubar li, .menubar ul ul > li:first-child{
+		border-top:1px solid rgba(0,0,0,0.15);
+		display:block;
+		width:100%;
+		padding:10px 12px;
+	}
+
+	.menubar ul ul li{
+		padding-left:30px;
+	}
+
+	.menubar ul ul{
+		display: block;
+		float:none;
+		background-color: rgba(0,0,0,0.03);
+	}
+
+	.menubar ul ul li{
+		display: block;
+		float:none;
+	}
+
+	.ddbutton{
+		cursor:pointer;
+		background-color: rgba(0,0,0,0.01);
+		padding:14px;
+		float:right;
+
+		.round(4px);
+		behavior: url(border-radius.htc);
+		display:block;
+		margin:5px;
+	}
+
+	.ddbutton:after{
+	   	content:'';
+	    display:block;
+	    clear:both;
+	}
+
+}

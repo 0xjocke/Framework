@@ -1,0 +1,88 @@
+ul.listDot{
+	list-style-position: inside;
+	list-style-type:circle;
+	ul{
+		list-style-position: inside;
+		list-style-type:disc;
+		padding-left:15px;
+	}
+}
+
+ul.listNum{
+	list-style-position: inside;
+	list-style-type:decimal;
+	ul{
+		list-style-position: inside;
+		list-style-type:decimal;
+		padding-left:15px;
+	}
+}
+
+ul.listClean{
+	list-style-position: inside;
+	list-style-type:none;
+	ul{
+		list-style-position: inside;
+		padding-left:15px;
+	}
+}
+
+th{
+	font-size: @fontSize;
+	font-weight: 700;
+}
+
+td, th{
+	border-bottom:1px solid lighten(@grayColor, 45%);
+	padding:5px 4px;
+}
+
+tr{
+	.transition;
+	&:hover{
+		background-color: lighten(@grayColor, 60%);
+	}
+}
+
+table{
+	width:100%;
+}
+
+table caption{
+	font-size: @fontSize+2;
+	font-weight: 700;
+}
+
+
+
+/*TABLET AND SMALL SCREENS*/
+@media (min-width: 700px) AND (max-width: 850px) 
+{
+	th, tr{
+		font-size: @fontSize+-2;
+		font-weight: 700;
+	}
+
+
+	table caption{
+		font-size: @fontSize;
+		font-weight: 700;
+	}
+
+}
+
+
+/*PHONES AND REALLY SMALL SCREENS*/
+@media (max-width: 700px) 
+{
+	th, tr{
+		font-size: @fontSize+-4;
+		font-weight: 700;
+	}
+
+
+	table caption{
+		font-size: @fontSize+-2;
+		font-weight: 700;
+	}
+}

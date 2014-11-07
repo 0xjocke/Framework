@@ -1,0 +1,133 @@
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="month"],
+input[type="datetime-local"],
+input[type="datetime"],
+input[type="date"],
+input[type="datetime"],
+input[type="password"],
+input[type="tel"],
+input[type="time"],
+input[type="url"],
+input[type="week"],
+textarea,
+select{
+	.reset();
+	.font;
+	.shadowInset(1px 2px 3px rgba(0,0,0,0.06));
+
+	padding:8px;
+	margin:2px 0px;
+	border:1px solid lighten(@grayColor, 50%);
+	background-color: #fff;
+	font-size:@fontSize;
+	resize: none;
+
+	&:hover{
+		border:1px solid lighten(@grayColor, 30%);
+	}
+	&:focus{
+		border:1px solid @primaryColor;
+	}
+
+	&.small{
+		padding:6px;
+		font-size:@fontSize+-2;
+	}
+	&.extraSmall{
+		padding:4px;
+		font-size:@fontSize+-4;
+	}
+	&.large{
+		padding:10px;
+		font-size:@fontSize+2;
+	}
+	&.extraLarge{
+		padding:10px;
+		font-size:@fontSize+6;
+	}
+
+	&:disabled{
+		background-color: lighten(@grayColor,55%);
+		&:hover{
+			background-color: lighten(@grayColor,50%);
+			border:1px solid lighten(@grayColor, 50%);
+		}
+	}
+
+}
+
+
+
+/*
+.inputGroup{
+	.boxing;
+	display: inline-block;
+	border:1px solid lighten(@grayColor, 50%);
+	.round(@roundness);
+	background-color: #fff;
+}
+
+.inputGroup *:first-child{
+}
+.inputGroup *:last-child{
+	border-left:1px solid lighten(@grayColor, 50%);
+	&:hover{
+		border-left:1px solid lighten(@grayColor, 50%);
+	}
+}
+
+.inputGroup *{
+	.reset;
+	display: inline-block;
+	font-size:@fontSize;
+}
+
+
+.inputGroup input{
+	padding:6px 4px;
+	border:0px;
+	margin:0px;
+	background-color: rgba(0, 0, 0, 0.0);
+	&:hover, &:focus{
+		border:0px;
+	}
+}
+.inputGroup button{
+	border:0px;
+	margin:0px;
+	padding:6px 4px;
+	&:hover, &:focus{
+		border:0px;
+	}
+}
+*/
+
+input[type="checkbox"],input[type="radio"]{
+	.reset();
+	width:18px;
+	height:18px;
+	margin:5px;
+}
+
+
+input[type=range]{
+	.reset();
+    width: 100%;
+}
+
+
+
+/*TABLET AND SMALL SCREENS*/
+@media (min-width: 700px) AND (max-width: 850px) 
+{
+
+}
+
+
+/*PHONES AND REALLY SMALL SCREENS*/
+@media (max-width: 700px) 
+{
+
+}

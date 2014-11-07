@@ -1,112 +1,200 @@
-/*
-*Menufunction!
-*Convert menubars to phoneMenues
-*REQUIRES JQUERY!
-*/
-//Find menus on page
-var menu = document.getElementsByClassName("menubar");
+/*jslint node: true */
 
-//Things to do when page load
-window.onload=function(){
-    for(var i = 0 ; i < menu.length ; i++){
-        checkMenuState(menu[i]);
+'use strict';
+
+//Find menus on page
+var menu = document.getElementsByClassName('menubar');
+var btns = document.getElementsByTagName('button');
+var aspect = document.getElementsByClassName('keepAspect');
+var winW = document.documentElement.clientWidth;
+
+//check if element has classname
+function hasClass(element, cls) {
+    return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
+}
+
+//chech when change aspect of aspectBox
+function aspectChange(item){
+    var itemW = item.offsetWidth;
+    var itemH = item.offsetHeight;
+    if(itemW > itemH){
+        item.setAttribute('style','height:'+itemW+'px;');
+    }
+    else if(itemW < itemH){
+        item.setAttribute('style','width:'+itemH+'px;');
     }
 }
 
 
-var winW = $(window).width();
-//Things to do when resizeWindow
-window.onresize = function(){
-    var newW = $(window).width();
+//when blicked a button inside form, disable button -> submit form
+function clicked(item){
 
-    if(winW != newW){
-        for(var i = 0 ; i < menu.length ; i++){
-            checkMenuState(menu[i]);
+    var form = item.target.form;
+    var button = item.target;
+    if(form && button.type === 'submit'){
+        
+        var loaderInside = document.createElement('div');
+
+        if(hasClass(button,'small')){
+            loaderInside.setAttribute('class','loaderSmall dark rightie m2 ');
         }
-        winW = $(window).width();
+        else{
+            loaderInside.setAttribute('class','loader dark rightie m2 ');
+        }
+        button.disabled = true;
+        button.appendChild(loaderInside);
+
+         form.submit();
+        
     }
+
+}
+
+
+
+//insert wrap for submenus
+function appendSubwraps(menuItem, i){
+
+    if(!menuItem.getElementsByTagName('div')[i]){
+
+        var ul = menuItem.getElementsByTagName('ul')[i];
+        var subWrap = document.createElement('div');
+        var li = ul.getElementsByTagName('li');
+        
+        ul.appendChild(subWrap);
+
+        for(var u = 1; u < li.length; u++){
+            subWrap.appendChild(li[1]);
+        }                
+    }
+}
+
+
+//toggle the clickbutton
+function toggleMenuBar(item){
+  
+    var menuItem = item.target.nextSibling;
+
+    if(menuItem.style.display === 'block'){
+        menuItem.style.display = 'none';
+    }
+    else{
+        menuItem.style.display = 'block';
+    }
+}
+
+
+//create the 'burger button'
+function createBurgerMenu(menuItem, menuUl){
+
+    var menuButton = document.getElementsByClassName('ddbutton');
+    var menuLines = document.getElementsByClassName('ddlines');
+
+    if(menuItem.getElementsByClassName('ddbutton').length === 0) {
+
+        menuButton = document.createElement('div');
+        menuLines = document.createElement('div');
+
+        menuButton.setAttribute('class','ddbutton');
+        menuLines.setAttribute('class','ddlines');
+
+        menuUl.parentNode.insertBefore(menuButton,menuUl);
+        menuButton.appendChild(menuLines);
+
+        menuButton.addEventListener('click', toggleMenuBar);
+
+    }
+
+}
+
+//check width and sets style of menu
+function checkW(menuItem, menuUl){
+
+var winWidth = window.innerWidth;
+
+if(winWidth >= 701){
+        menuUl.style.display='block';
+    }
+    else{
+        menuUl.style.display='none';
+
+        if(menuItem.className.indexOf('fixed') > 0){
+            menuItem.nextSibling.style.height = '0px';
+        }
+    }
+
 }
 
 //MenuState function
 function checkMenuState(menuItem){
 
-    var winWidth = window.innerWidth;
-    var menuButton = document.getElementsByClassName("ddbutton");
-    var menuLines = document.getElementsByClassName("ddlines");
-    var menuUl = menuItem.getElementsByTagName("ul")[0];
-    var wrapper = document.getElementsByClassName("wrapper");
-
-
+    
+    var menuUl = menuItem.getElementsByTagName('ul')[0];
+    var wrapper = document.getElementsByClassName('wrapper');
 
 
     //Check for submenus inside THIS menu AND GROUPING THEM WITH DIV!
-    if(menuItem.getElementsByTagName("ul").length > 1){
-        for(var i = 1; i < menuItem.getElementsByTagName("ul").length; i++){
-            if(!menuItem.getElementsByTagName("div")[i]){
-                var subWrap = document.createElement("div");
-                if(menuItem.getElementsByTagName("ul")[i].getElementsByTagName("a").length > 1){
-                    var li = menuItem.getElementsByTagName("ul")[i].getElementsByTagName("a");
-                    var n = 1;
-                }
-                else{
-                    var li = menuItem.getElementsByTagName("ul")[i].getElementsByTagName("li");
-                    var n = 0;
-                }
-                
-            
-                menuItem.getElementsByTagName("ul")[i].appendChild(subWrap,menuItem.getElementsByTagName("ul")[i]);
+    if(menuItem.getElementsByTagName('ul').length > 0){
 
-                for(var u = 0; u < li.length; u++){
-                    $(li[n]).appendTo(subWrap);
-                }
-            }
+        for(var i = 0; i < menuItem.getElementsByTagName('ul').length; i++){
+            appendSubwraps(menuItem, i);
+        }
+
+    }
+
+
+    //create wraper around fixed menu, pushing page down same size as menu
+    if(menuItem.className.indexOf('fixed') > 0){
+        if(menuItem.nextSibling.className !== 'wrapper') {
+                wrapper = document.createElement('div');
+                wrapper.setAttribute('class','wrapper');
+                wrapper.style.height = menuItem.offsetHeight+'px';
+                menuItem.parentNode.insertBefore(wrapper,menuItem.nextSibling);
+        }
+        else{
+        menuItem.nextSibling.style.height = menuItem.offsetHeight+'px';
         }
     }
 
 
-
-
-
-
-if(menuItem.className.indexOf("fixed") > 0){
-    if(menuItem.nextSibling.className != "wrapper") {
-            wrapper = document.createElement("div");
-            wrapper.setAttribute("class","wrapper");
-            wrapper.style.height = menuItem.offsetHeight+"px";
-            menuItem.parentNode.insertBefore(wrapper,menuItem.nextSibling);
-    }
-    else{
-    menuItem.nextSibling.style.height = menuItem.offsetHeight+"px";
-    }
+    createBurgerMenu(menuItem, menuUl);
+    checkW(menuItem, menuUl);
+    
 }
 
 
 
-    if($(menuItem).find(menuButton).length == 0) {
 
-        menuButton = document.createElement("div");
-        menuLines = document.createElement("div");
-
-        menuButton.setAttribute("class","ddbutton");
-        menuLines.setAttribute("class","ddlines");
-
-        $(menuButton).insertBefore(menuUl);
-        menuButton.appendChild(menuLines);
+//find all buttons on page
+for (var i = btns.length - 1; i >= 0; i--) {
+    btns[i].addEventListener('click', clicked);
+}
 
 
-        $(menuButton).click(function() {
-            $(menuUl).slideToggle("fast", function() { });
-        });
+
+
+
+//Things to do when page load
+window.onload=function(){
+
+    for(var i = 0 ; i < menu.length ; i++){
+        checkMenuState(menu[i]);
     }
-
-    if(winWidth >= 701){
-        menuUl.style.display="block";
+    for(var u = 0 ; u < aspect.length ; u++){
+        aspectChange(aspect[u]);
     }
-    else{
-        menuUl.style.display="none";
+};
 
-            if(menuItem.className.indexOf("fixed") > 0)
-            menuItem.nextSibling.style.height = "0px";
+
+
+//Things to do when resizeWindow
+window.onresize = function(){
+    var newW = document.documentElement.clientWidth;
+
+    if(winW !== newW){
+        for(var i = 0 ; i < menu.length ; i++){
+            checkMenuState(menu[i]);
         }
-
-}
+        winW = document.documentElement.clientWidth;
+    }
+};
