@@ -10,7 +10,7 @@ var autoprefixer = require('gulp-autoprefixer');
  
 gulp.task('styles', function () {
   gulp.src('./less/style.less')
-    .pipe(less())
+    .pipe(less({compress: true}))
     .pipe(autoprefixer({ browsers: ['ie >= 9']}))
     .pipe(gulp.dest('./public/css/'));
 });
