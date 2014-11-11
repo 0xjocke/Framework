@@ -7,6 +7,22 @@ var menu = document.getElementsByClassName('menubar');
 var btns = document.getElementsByTagName('button');
 var aspect = document.getElementsByClassName('keepAspect');
 var winW = document.documentElement.clientWidth;
+var inputFields = document.getElementsByTagName('input');
+var fileButton = [];
+
+//function for click event on input
+function clickFunc(input){
+    return function() {
+        input.click();
+    };
+}
+
+//set the name when chose file
+function setName(fileName, button){
+    return function(){
+        button.innerHTML = 'File: <span class="textSmall">'+fileName.value.replace(/^.*\\/,'')+'</span>';
+    };
+}
 
 //check if element has classname
 function hasClass(element, cls) {
@@ -171,7 +187,25 @@ for (var i = btns.length - 1; i >= 0; i--) {
 }
 
 
+//looks up all the input with type 'file' to change them into a button
+//instead of the unstyled browse button
+//the placeholder value will be displayed as the text of the button
+for(var i = 0; i < inputFields.length; i++) {
+    if(inputFields[i].type.toLowerCase() === 'file') {
+        var buttonText = inputFields[i].getAttribute('placeholder');
+        var thisFileInput = inputFields[i];
+        fileButton[i] = document.createElement('button');
 
+        fileButton[i].innerHTML = buttonText;
+        inputFields[i].setAttribute('hidden','true');
+        fileButton[i].setAttribute('type', 'button');
+        inputFields[i].parentNode.insertBefore(fileButton[i], inputFields[i]);
+
+        fileButton[i].addEventListener('click', clickFunc(thisFileInput));
+        thisFileInput.addEventListener('change', setName(thisFileInput, fileButton[i]));
+        
+    }
+}
 
 
 //Things to do when page load
