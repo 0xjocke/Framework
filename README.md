@@ -1,8 +1,9 @@
 AlbatrosCSS
 ==
 Easy CSS framework to create simple responsive webprojects.
-Written by Tobias Friberg, this project shall remain openSource! Edit as you like.
-This project is now free from jQuery dependencies.
+Written by Tobias Friberg and shall remain openSource, Edit as you like.
+AlbatrosCSS is now free from jQuery dependencies and comes with
+FontAwesome, for 'fa' documentation visit http://fortawesome.github.io/
 
 
 Tech
@@ -12,11 +13,12 @@ Tech
 - CSS3
 - HTML5
 - Node
+- FontAwesome
 
 
 How to (quick)
 --
-Link the 'minified' css and js files to your project, enjoy.
+Link the minified css and js files to your project, enjoy.
 
 
 How to 
@@ -25,7 +27,8 @@ How to
 - Run 'gulp listen' to listen for changes in JavaScript and/or LESS
 - Edit the config.less located in /css
 - Save
-The files in public/js and public/css should now be updated with your new configuration
+- The files in public/js and public/css should now be updated with your new configuration
+- Link the minified css and js files to your project, enjoy
 
 
 TODO
@@ -35,7 +38,10 @@ Full documentation
 
 Other
 --
-*note: this is developed for new browsers only so < IE9 will not work proper.*
+The framework will work without the JavaScript file but some of the
+elements will not work as they should, highly recomended to use the JavaScript file.
+
+*note: AlbatrosCSS is developed for new browsers only so < IE9 will not work proper.*
 
 
 

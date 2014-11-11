@@ -2,33 +2,59 @@
 .divDefault{
 	background-color: @backgroundColor;
 	color: contrast(@backgroundColor, @fontColorDark, @fontColorLight, 45%);
-	&.dockBottom{
-		border-top:1px solid darken(@backgroundColor,20%);
-	}
 	&.darken{
 		background-color: darken(@backgroundColor, 5%);
+		color: contrast(darken(@backgroundColor, 5%), @fontColorDark, @fontColorLight, 45%);
+	}
+	&.faded{
+		background-color: fade(@backgroundColor, 20%);
+		color: contrast(lighten(@backgroundColor, 30%), @fontColorDark, @fontColorLight, 40%);
 	}
 }
 
 .divPrimary{
 	background-color: @primaryColor;
 	color: contrast(@primaryColor, @fontColorDark, @fontColorLight, 45%);
-	&.dockBottom{
-		border-top:1px solid darken(@primaryColor,20%);
-	}
 	&.darken{
 		background-color: darken(@primaryColor, 5%);
+		color: contrast(darken(@primaryColor, 5%), @fontColorDark, @fontColorLight, 45%);
+	}
+	&.faded{
+		background-color: fade(@primaryColor, 20%);
+		color: contrast(lighten(@primaryColor, 30%), @fontColorDark, @fontColorLight, 40%);
 	}
 }
 
 .divSecondary{
 	background-color: @secondaryColor;
 	color: contrast(@secondaryColor, @fontColorDark, @fontColorLight, 45%);
-	&.dockBottom{
-		border-top:1px solid darken(@secondaryColor,20%);
-	}
 	&.darken{
 		background-color: darken(@secondaryColor, 5%);
+		color: contrast(darken(@secondaryColor, 5%), @fontColorDark, @fontColorLight, 45%);
+	}
+	&.faded{
+		background-color: fade(@secondaryColor, 20%);
+		color: contrast(lighten(@secondaryColor, 30%), @fontColorDark, @fontColorLight, 40%);
 	}
 }
 
+.divDefaultBorder{
+	border:1px solid @backgroundColor;
+	&.faded{
+		border-color: fade(@backgroundColor, 20%);
+	}
+}
+
+.divPrimaryBorder{
+	border:1px solid @primaryColor;
+	&.faded{
+		border-color: fade(@primaryColor, 20%);
+	}
+}
+
+.divSecondaryBorder{
+	border:1px solid @secondaryColor;
+	&.faded{
+		border-color: fade(@secondaryColor, 20%);
+	}
+}

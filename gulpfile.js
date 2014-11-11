@@ -11,7 +11,7 @@ var autoprefixer = require('gulp-autoprefixer');
 gulp.task('styles', function () {
   gulp.src('./less/style.less')
     .pipe(less({compress: true}))
-    .pipe(autoprefixer({ browsers: ['ie >= 9']}))
+    .pipe(autoprefixer({ browsers: ['ie >= 9', '> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1']}))
     .pipe(gulp.dest('./public/css/'));
 });
  

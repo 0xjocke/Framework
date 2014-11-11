@@ -1,4 +1,4 @@
-ul.listDot{
+ul.dot{
 	list-style-position: inside;
 	list-style-type:circle;
 	ul{
@@ -8,7 +8,7 @@ ul.listDot{
 	}
 }
 
-ul.listNum{
+ul.num{
 	list-style-position: inside;
 	list-style-type:decimal;
 	ul{
@@ -18,7 +18,7 @@ ul.listNum{
 	}
 }
 
-ul.listClean{
+ul.clean{
 	list-style-position: inside;
 	list-style-type:none;
 	ul{
@@ -33,14 +33,14 @@ th{
 }
 
 td, th{
-	border-bottom:1px solid lighten(@grayColor, 25%);
+	border-bottom:1px solid lighten(@grayColor, 30%);
 	padding:5px 4px;
 }
 
 tr{
 	.transition;
 	&:hover{
-		background-color: lighten(@grayColor, 30%);
+		background-color: lighten(@grayColor, 35%);
 	}
 }
 
@@ -49,7 +49,6 @@ table{
 }
 
 table caption{
-	font-size: @fontSize+2;
 	font-weight: 700;
 }
 
@@ -58,16 +57,6 @@ table caption{
 /*TABLET AND SMALL SCREENS*/
 @media (min-width: 700px) AND (max-width: 850px) 
 {
-	th, tr{
-		font-size: @fontSize+-2;
-		font-weight: 700;
-	}
-
-
-	table caption{
-		font-size: @fontSize;
-		font-weight: 700;
-	}
 
 }
 
@@ -75,14 +64,5 @@ table caption{
 /*PHONES AND REALLY SMALL SCREENS*/
 @media (max-width: 700px) 
 {
-	th, tr{
-		font-size: @fontSize+-4;
-		font-weight: 700;
-	}
 
-
-	table caption{
-		font-size: @fontSize+-2;
-		font-weight: 700;
-	}
 }

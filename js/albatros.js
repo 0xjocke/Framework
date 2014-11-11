@@ -2,6 +2,7 @@
 
 'use strict';
 
+
 //Find menus on page
 var menu = document.getElementsByClassName('menubar');
 var btns = document.getElementsByTagName('button');
@@ -20,7 +21,7 @@ function clickFunc(input){
 //set the name when chose file
 function setName(fileName, button){
     return function(){
-        button.innerHTML = 'File: <span class="textSmall">'+fileName.value.replace(/^.*\\/,'')+'</span>';
+        button.innerHTML = 'File: <i class="fa fa-file-o"></i> <span class="textSmall">'+fileName.value.replace(/^.*\\/,'')+'</span>';
     };
 }
 
