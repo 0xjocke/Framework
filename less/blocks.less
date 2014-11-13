@@ -3,8 +3,12 @@
 	background-color: @backgroundColor;
 	color: contrast(@backgroundColor, @fontColorDark, @fontColorLight, 45%);
 	&.darken{
-		background-color: darken(@backgroundColor, 5%);
-		color: contrast(darken(@backgroundColor, 5%), @fontColorDark, @fontColorLight, 45%);
+		background-color: darken(@backgroundColor, 10%);
+		color: contrast(darken(@backgroundColor, 10%), @fontColorDark, @fontColorLight, 45%);
+	}
+	&.lighten{
+		background-color: lighten(@backgroundColor, 10%);
+		color: contrast(lighten(@backgroundColor, 10%), @fontColorDark, @fontColorLight, 45%);
 	}
 	&.faded{
 		background-color: fade(@backgroundColor, 20%);
@@ -16,8 +20,12 @@
 	background-color: @primaryColor;
 	color: contrast(@primaryColor, @fontColorDark, @fontColorLight, 45%);
 	&.darken{
-		background-color: darken(@primaryColor, 5%);
-		color: contrast(darken(@primaryColor, 5%), @fontColorDark, @fontColorLight, 45%);
+		background-color: darken(@primaryColor, 10%);
+		color: contrast(darken(@primaryColor, 10%), @fontColorDark, @fontColorLight, 45%);
+	}
+	&.lighten{
+		background-color: lighten(@primaryColor, 10%);
+		color: contrast(lighten(@primaryColor, 10%), @fontColorDark, @fontColorLight, 45%);
 	}
 	&.faded{
 		background-color: fade(@primaryColor, 20%);
@@ -29,8 +37,12 @@
 	background-color: @secondaryColor;
 	color: contrast(@secondaryColor, @fontColorDark, @fontColorLight, 45%);
 	&.darken{
-		background-color: darken(@secondaryColor, 5%);
-		color: contrast(darken(@secondaryColor, 5%), @fontColorDark, @fontColorLight, 45%);
+		background-color: darken(@secondaryColor, 10%);
+		color: contrast(darken(@secondaryColor, 10%), @fontColorDark, @fontColorLight, 45%);
+	}
+	&.lighten{
+		background-color: lighten(@secondaryColor, 10%);
+		color: contrast(lighten(@secondaryColor, 10%), @fontColorDark, @fontColorLight, 45%);
 	}
 	&.faded{
 		background-color: fade(@secondaryColor, 20%);

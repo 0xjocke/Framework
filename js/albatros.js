@@ -30,18 +30,6 @@ function hasClass(element, cls) {
     return (' ' + element.className + ' ').indexOf(' ' + cls + ' ') > -1;
 }
 
-//chech when change aspect of aspectBox
-function aspectChange(item){
-    var itemW = item.offsetWidth;
-    var itemH = item.offsetHeight;
-    if(itemW > itemH){
-        item.setAttribute('style','height:'+itemW+'px;');
-    }
-    else if(itemW < itemH){
-        item.setAttribute('style','width:'+itemH+'px;');
-    }
-}
-
 
 //when blicked a button inside form, disable button -> submit form
 function clicked(item){
@@ -215,9 +203,6 @@ window.onload=function(){
     for(var i = 0 ; i < menu.length ; i++){
         checkMenuState(menu[i]);
     }
-    for(var u = 0 ; u < aspect.length ; u++){
-        aspectChange(aspect[u]);
-    }
 };
 
 
@@ -232,4 +217,5 @@ window.onresize = function(){
         }
         winW = document.documentElement.clientWidth;
     }
+
 };

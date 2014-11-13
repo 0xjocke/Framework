@@ -5,6 +5,8 @@ Written by Tobias Friberg and shall remain openSource, Edit as you like.
 AlbatrosCSS is now free from jQuery dependencies and comes with
 FontAwesome, for 'fa' documentation visit http://fortawesome.github.io/
 
+Visit AlbatrosCSS for documentation http://www.albatroscss.com
+
 
 Tech
 --
@@ -33,7 +35,7 @@ How to
 
 TODO
 --
-Full documentation
+none atm..
 
 
 Other
