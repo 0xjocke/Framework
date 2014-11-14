@@ -1,5 +1,5 @@
 /*jslint node: true */
-
+(function(){
 'use strict';
 
 
@@ -219,3 +219,4 @@ window.onresize = function(){
     }
 
 };
+})();
